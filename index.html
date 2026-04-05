@@ -9,11 +9,11 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     body {
-        background-color: #f5f5f5;
+        background-color: #fffffff1;
         display: flex;
         justify-content: center;
         padding: 60px 20px;
@@ -22,28 +22,30 @@
     .container {
         background: white;
         padding: 40px;
-        border-radius: 12px;
+        border-radius: 0;
         width: 100%;
         max-width: 600px;
     }
 
     h1 {
-        font-size: 24px;
+        font-size: 14px;
         margin-bottom: 8px;
         color: #111;
+        text-align: center;
     }
 
     p {
-        color: #666;
+        color: #000000;
         margin-bottom: 24px;
         font-size: 14px;
+        text-align: center;
     }
 
     textarea {
         width: 100%;
         padding: 12px;
         border: 1px solid #ddd;
-        border-radius: 8px;
+        border-radius: 0;
         font-size: 14px;
         resize: none;
         height: 100px;
@@ -51,11 +53,11 @@
     }
 
     button {
-        background-color: #111;
-        color: white;
-        border: none;
+        background-color: #ffffff;
+        color: black;
+        border: 1px solid black;
         padding: 12px 24px;
-        border-radius: 8px;
+        border-radius: 0;
         font-size: 14px;
         cursor: pointer;
         width: 100%;
@@ -65,7 +67,7 @@
         margin-top: 24px;
         padding: 16px;
         background: #f9f9f9;
-        border-radius: 8px;
+        border-radius: 0;
         font-size: 14px;
         color: #333;
         display: none;
@@ -77,7 +79,7 @@
     <h1>Course Advisor</h1>
     <p>Ask a question about any class or teacher at your school.</p>
 
-    <textarea id="question" placeholder="e.g. Which math teacher gives the least homework?"></textarea>
+    <textarea id="question"></textarea>
 
     <button onclick="askQuestion()">Ask</button>
 
@@ -91,7 +93,6 @@
 
         const answerDiv = document.getElementById("answer");
         answerDiv.style.display = "block";
-        answerDiv.textContent = "Thinking...";
 
         const response = await fetch("https://course-planning-project.onrender.com/ask", {
             method: "POST",

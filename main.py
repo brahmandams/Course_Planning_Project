@@ -54,11 +54,3 @@ Student question: {body.question}"""
         messages=[{"role": "user", "content": prompt}]
     )
     return {"answer": response.choices[0].message.content}
-
-
-
-
-
-
-
-

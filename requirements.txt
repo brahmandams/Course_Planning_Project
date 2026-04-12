@@ -4,3 +4,8 @@ pandas
 groq
 python-dotenv
 google-genai
+#RAG
+langchain-community 
+faiss-cpu 
+sentence-transformers 
+langchain-huggingface
